@@ -22,7 +22,10 @@ cfg80211 based Linux wireless drivers.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -D regulatory.bin $RPM_BUILD_ROOT%{_datadir}/crda/regulatory.bin
+install -d $RPM_BUILD_ROOT{%{_datadir}/crda,%{_mandir}/man5}
+
+install regulatory.bin $RPM_BUILD_ROOT%{_datadir}/crda/regulatory.bin
+install regulatory.bin.5 $RPM_BUILD_ROOT%{_mandir}/man5
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -30,3 +33,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %{_datadir}/crda
+%{_mandir}/man5/*.5*
