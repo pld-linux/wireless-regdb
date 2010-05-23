@@ -1,11 +1,11 @@
 Summary:	http://wireless.kernel.org/en/developers/Regulatory
 Name:		wireless-regdb
-Version:	2009.03.09
+Version:	2009.11.25
 Release:	1
 License:	ISC
 Group:		Networking/Daemons
 Source0:	http://wireless.kernel.org/download/wireless-regdb/%{name}-%{version}.tar.bz2
-# Source0-md5:	09d423911584e6580efb8af366775d5f
+# Source0-md5:	73166199a4df3854fa81500b5c9a639b
 URL:		http://wireless.kernel.org/en/developers/Regulatory
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
