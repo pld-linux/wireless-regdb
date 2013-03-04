@@ -1,3 +1,7 @@
+#
+# Conditional build:
+%bcond_without	verify	# don't verify database
+
 Summary:	Wireless regulatory database for Linux drivers
 Summary(pl.UTF-8):	Baza danych przepisów dotyczących sieci bezprzewodowych dla sterowników linuksowych
 Name:		wireless-regdb
@@ -10,6 +14,7 @@ Source0:	https://www.kernel.org/pub/software/network/wireless-regdb/%{name}-%{ve
 URL:		http://wireless.kernel.org/en/developers/Regulatory
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+%{?with_verify:BuildRequires:	crda}
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -26,6 +31,12 @@ wszystkie linuksowe sterowniki bezprzewodowe oparte na cfg80211.
 
 %prep
 %setup -q
+
+%build
+%if %{with verify}
+regdbdump regulatory.bin > dump.txt
+test -s dump.txt
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
