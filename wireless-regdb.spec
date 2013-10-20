@@ -5,12 +5,12 @@
 Summary:	Wireless regulatory database for Linux drivers
 Summary(pl.UTF-8):	Baza danych przepisów dotyczących sieci bezprzewodowych dla sterowników linuksowych
 Name:		wireless-regdb
-Version:	2013.02.13
-Release:	2
+Version:	2013.10.11
+Release:	1
 License:	ISC
 Group:		Networking/Daemons
 Source0:	https://www.kernel.org/pub/software/network/wireless-regdb/%{name}-%{version}.tar.xz
-# Source0-md5:	46a4aa49282ea6713c3cf28cc2fc600f
+# Source0-md5:	d959ed84a23ded39f196d435f1da5583
 URL:		http://wireless.kernel.org/en/developers/Regulatory
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
