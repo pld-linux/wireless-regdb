@@ -41,7 +41,8 @@ test -s dump.txt
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_datadir}/crda,%{_mandir}/man5}
+install -d $RPM_BUILD_ROOT{/lib/firmware,%{_datadir}/crda,%{_mandir}/man5}
+cp -p regulatory.db regulatory.db.p7s $RPM_BUILD_ROOT/lib/firmware
 cp -p regulatory.bin $RPM_BUILD_ROOT%{_datadir}/crda/regulatory.bin
 cp -p regulatory.bin.5 $RPM_BUILD_ROOT%{_mandir}/man5
 
@@ -51,5 +52,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc LICENSE README
+/lib/firmware/regulatory.db
+/lib/firmware/regulatory.db.p7s
 %{_datadir}/crda
 %{_mandir}/man5/regulatory.bin.5*
